@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>TrainGo</title>
+    
+
+
+  <script type="text/javascript" language = "JavaScript" src="codejs.js"></script>
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  
+<!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed|Orbitron:700|Russo+One" rel="stylesheet">
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+
+
+</head>
+
+<body>
+
+<!--div id=maiximum class=container-->
+<!-- Jumbotron for Title -->
+  <div id="jumbos" class="jumbotron" style="background-color: #20315A ; color: white;">
+        <h1 class="text-center"><strong><i class="fa fa-newspaper-o"></i><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span><a> Train</a>Go</strong></h1>
+  </div>
+
+  <div id="mainContainer" class="row">
+
+    <div id ="addTrain" class= "col-md-3 containerPlus">
+
+            <div class="panel panel-default">
+              <div class="panel-heading containerHeader"><strong>Add Train</strong></div>          
+              <div class="panel-body">
+
+
+                <!-- Here we create an HTML Form for handling the inputs-->
+                <form role="form">
+
+                  <!-- Here we create the text box for capturing the search term-->
+                  <div class="form-group">
+                    <label for="search">Train Name:</label>
+                    <input type="text" class="form-control" id="trainNameId">
+                  </div>
+
+                  <!-- Here we create the text box for capturing the search term-->
+                  <div class="form-group">
+                    <label for="search">Destination:</label>
+                    <input type="text" class="form-control" id="destinationId">
+                  </div>
+
+                  <!-- Here we capture the number of records that the user wants to retrieve  -->
+                  <div class="form-group">
+                    <label for="pwd">First Train Time:</label>
+                    <input type="time" class="form-control" id="firstTimeId">
+                  </div>
+
+                  <!-- Here we capture the Start Year Parameter-->
+                  <div class="form-group">
+                    <label for="start-year">Frequency:</label>
+                    <input type="number" class="form-control" id="minutesFreqId" min="0"  placeholder="Input in Minutes">
+                    
+                  </div>
+
+            
+                  <!-- Here we have our final submit button -->
+                  <button type="submit" class="btn btn-default" id="run-input"><i class="fa fa-search"></i> Submmit</button>
+                 
+
+                </form>
+              </div>
+            </div>
+    </div>
+              
+    <div id = "scheduleContainer" class = "btn-group col-md-9 containerPlus">
+      <div class="panel panel-default">
+        <div class="panel-heading containerHeader"><strong>Current Train Schedule</strong></div>
+        <table id="table1">
+          <tr>
+            <th>Train Name</th>
+            <th>Destination</th>
+            <th>Frequency</th>
+            <th>Next Arrival</th>
+            <th>Minutes Away</th>
+          </tr>
+  
+        </table>
+      </div>   
+
+    </div>
+
+
+
+  </div>
+<!--/div-->
+
+
+
+  
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+
+
+
+</html>

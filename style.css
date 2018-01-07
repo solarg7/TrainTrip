@@ -1,0 +1,56 @@
+a{
+	font-weight: bold;
+	color: orange;
+	font-size: 90px;
+}
+	
+
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.containerHeader{
+	font-size: 20px;
+}
+
+body{
+	background-color: orange;
+	width: auto;
+}
+
+
+#scheduleContainer{
+	padding-right: 20px;
+	    
+}
+
+#jumbos{
+	padding-right:  0px;
+	padding-left: 0px;
+}
+
+
+
+#mainContainer{
+	margin-left: 0px;
+    margin-right: 0px;
+}
+
+#addTrain{
+	padding-left:  20px;
+	
+}
