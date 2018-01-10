@@ -44,29 +44,39 @@ window.onload = function() {
 
 		});
 
-		firebase.database().ref().on("child_added",function(snapshot){
-			//var lastRow = $("<tr/>");//.apprendTo(table1.find('tbody:last'));
-			//var trainNameTable =  (snapshot.val().trainName);
-			//var destinationTable =  (snapshot.val().destination);
-			//var minutesFreqTable =  (snapshot.val().minutesFreq);
-			//var firstTimeTable =  (snapshot.val().firstTime);
 
-			//console.log(trainNameTable);
-			//console.log(destinationTable);
-			//var trainNombre =  (snapshot.val().trainName);
-			//lastRow.append($("<td/>").trainNameTable);
-			//lastRow.append($("<td/>").destinationTable);
-			//lastRow.append($("<td/>").minutesFreqTable);
-			//lastRow.append($("<td/>").firstTimeTable);
-			//lastRow.append($("<td/>").sfirstTimeTable);
-			//table1.append(lastRow);						
-			
-			$("#table1").append("<tr><td>" + snapshot.val().trainName + "</td><td>" +  snapshot.val().destination + "</td><td>" + snapshot.val().firstTime + "</td><td>" +  snapshot.val().minutesFreq +"</td><td>" +  snapshot.val().minutesFreq + "</td></tr>");
-			//$("#table1").append("<td>" + snapshot.val().destination + "</td>");
-			//$("#table1").append("<td>" + snapshot.val().minutesFreq + "</td>");
-			//$("#table1").append("<td>" + snapshot.val().firstTime + "</td>");
-			//$("#table1").append("<td>" + snapshot.val().firstTime + "</td>");
-			//$("#table1").append("</tr>")
+
+
+
+
+
+		firebase.database().ref().on("child_added",function(snapshot){
+
+			console.log(snapshot.val().firstTime);
+			var first = snapshot.val().firstTime;
+			console.log(first);
+
+			var firstCoverted = moment(first, "hh:mm").subtract(1, "years");
+			console.log(firstCoverted);
+
+			var tFrequency = snapshot.val().minutesFreq;
+
+			// current time
+			var currentTime = moment();
+
+			var diffTime = moment().diff(moment(firstCoverted), "minutes");
+
+			var tRemainder = diffTime % tFrequency;
+
+			var tMinutesTillTrian = tFrequency - tRemainder;
+
+			var nextTrain = moment().add(tMinutesTillTrian, "minutes");
+
+			var nextTrainScreen = moment(nextTrain).format("hh:mm");
+
+			//var nextTime = moment(firstTimeMoment.add(lapse)).format();
+			$("#table1").append("<tr><td>" + snapshot.val().trainName + "</td><td>" +  snapshot.val().destination + "</td><td>" + snapshot.val().minutesFreq + "</td><td>" +  nextTrainScreen +"</td><td>" +  tMinutesTillTrian + "</td></tr>");
+
 		})
 
 	
