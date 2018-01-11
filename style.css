@@ -39,8 +39,11 @@ body{
 }
 
 #jumbos{
+	padding-top: 20px;
 	padding-right:  0px;
+	padding-bottom: 20px;
 	padding-left: 0px;
+
 }
 
 
@@ -53,4 +56,8 @@ body{
 #addTrain{
 	padding-left:  20px;
 	
+}
+
+.padClass{
+	padding-top: 10px;
 }

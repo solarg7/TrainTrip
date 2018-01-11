@@ -74,7 +74,16 @@
                   <!-- Here we capture the number of records that the user wants to retrieve  -->
                   <div class="form-group">
                     <label for="pwd">First Train Time:</label>
-                    <input type="time" class="form-control" id="firstTimeId">
+                    <div class = "row">
+                      <div class = "col-xs-4">
+                        <input type="number" min= 0 max=23 class="form-control col-xs-2" id="firstTimeHourId">
+                      </div>
+                      <div class = "col-xs-1 padClass">:</div>
+                      <div class = "col-xs-4">
+                        <input type="number" min= 0 max=59 class="form-control" id="firstTimeMinuteId">
+                      </div>
+                      <div class = "col-xs-2 padClass">hh:mm</div>
+                    </div>                      
                   </div>
 
                   <!-- Here we capture the Start Year Parameter-->
@@ -87,6 +96,8 @@
             
                   <!-- Here we have our final submit button -->
                   <button type="submit" class="btn btn-default" id="run-input"><i class="fa fa-search"></i> Submmit</button>
+
+                  <button type="reset" class="btn btn-default"><i class="fa fa-search"></i> Reset</button>
                  
 
                 </form>
@@ -102,7 +113,7 @@
             <th>Train Name</th>
             <th>Destination</th>
             <th>Frequency (min)</th>
-            <th>Next Arrival</th>
+            <th>Next Arrival [hh:mm]</th>
             <th>Minutes Away</th>
           </tr>
   
